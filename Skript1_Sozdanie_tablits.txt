@@ -1,0 +1,46 @@
+CREATE TABLE Авторы(
+  [idАвтор] int PRIMARY KEY IDENTITY,
+  [Фамилия] nvarchar(15) NOT NULL,
+  [Имя] nvarchar(15) NOT NULL,
+  [Отчество] nvarchar(15) NOT NULL,
+  [Страна] nvarchar(15) NOT NULL,
+  );
+CREATE TABLE Пользователи(
+  [idПользователь] int PRIMARY KEY IDENTITY,
+  [Имя] nvarchar(15) NOT NULL,
+  [Фамилия] nvarchar(15) NOT NULL,
+  [Телефон] nvarchar(11) NOT NULL UNIQUE,
+  [Адрес] nvarchar(50) NOT NULL,
+  [ДатаРождения] date NOT NULL,
+  );
+CREATE TABLE Сотрудники(
+  [idСотрудник] int PRIMARY KEY IDENTITY,
+  [Имя] nvarchar(15) NOT NULL,
+  [Фамилия] nvarchar(15) NOT NULL,
+  [Телефон] nvarchar(11) UNIQUE,
+  [Адрес] nvarchar(50),
+  [ДатаРождения] date NOT NULL,
+  [Паспорт] nvarchar(11) UNIQUE, 
+  [Пароль] nvarchar(20),
+  );
+CREATE TABLE Книга(
+  [idКнига] int PRIMARY KEY IDENTITY,
+  [Название] nvarchar(35) NOT NULL,
+  [Жанр] nvarchar(15) NOT NULL,
+  [Год Выпуска] int ,
+  [Общее Количество] int NOT NULL,
+  );
+CREATE TABLE Аренда(
+  [idСотрудник] int FOREIGN KEY REFERENCES Сотрудники(idСотрудник),
+  [idПользователь] int FOREIGN KEY REFERENCES Пользователи(idПользователь),
+  [idКнига] int FOREIGN KEY REFERENCES Книга(idКнига) NOT NULL,
+  [Дата Выдачи] date DEFAULT(GETDATE()),
+  [Дата Возврата] date DEFAULT(NULL),
+  [Количество] int NOT NULL,
+  PRIMARY KEY ([idПользователь], [idКнига], [Дата Выдачи])
+  );
+CREATE TABLE [Автор-Книга](
+  [idАвтор] int FOREIGN KEY REFERENCES Авторы(idАвтор) NOT NULL,
+  [idКнига] int FOREIGN KEY REFERENCES Книга(idКнига) NOT NULL,
+  PRIMARY KEY([idАвтор],[idКнига]),
+  );

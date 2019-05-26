@@ -1,6 +1,6 @@
 ﻿namespace Okulova_CourseWork
 {
-    partial class Staff_Add
+    partial class Staff_AddBook
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff_Add));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff_AddBook));
             this.Addbutton = new System.Windows.Forms.Button();
             this.Clearbutton = new System.Windows.Forms.Button();
             this.Cancelbutton = new System.Windows.Forms.Button();
@@ -237,6 +237,7 @@
             this.MaximizeBox = false;
             this.Name = "Staff_Add";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление книги ";
             this.ResumeLayout(false);
             this.PerformLayout();

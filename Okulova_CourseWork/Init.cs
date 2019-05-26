@@ -14,7 +14,7 @@ namespace Okulova_CourseWork
             ToolTip Passport = new ToolTip();
             Passport.SetToolTip(PassporttextBox, "Введите серию и номер паспорта БЕЗ пробелов и других знаков.");
             ToolTip Password = new ToolTip();
-            Passport.SetToolTip(PasswordtextBox, "Если у вас нет пароля, заполните поле 'Паспорт'.");
+            Password.SetToolTip(PasswordtextBox, "Пароль по умолчанию - серия и номер паспорта без пробелов.");
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)
@@ -33,13 +33,18 @@ namespace Okulova_CourseWork
             string Passport = PassporttextBox.Text;
             string Password = PasswordtextBox.Text;
             var query = from c in db.GetStaffTable()
-                        where c.Password == Password && Password == Passport
+                        where c.Password == Password && c.Password == Password && c.Password == c.Passport
                         select c.Id;
             int a = query.FirstOrDefault();
             if (a != 0)
             {
-                MessageBox.Show("Измените свой пароль во вкладке: изменение", "", MessageBoxButtons.OK,
+                MessageBox.Show("Вы можете изменить свой пароль во вкладке: Изменение", "", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                MainStaff form = new MainStaff(a);
+                Hide();
+                form.Owner = this;
+                form.ShowDialog();
+                form.Dispose();
             }
             else
             {
@@ -52,11 +57,11 @@ namespace Okulova_CourseWork
                         MessageBoxIcon.Information);
                 else
                 {
-                    MainStaff form = new MainStaff();
+                    MainStaff form = new MainStaff(a);
                     Hide();
+                    form.Owner = this;
                     form.ShowDialog();
                     form.Dispose();
-                    Show();
                 }
             }           
         }

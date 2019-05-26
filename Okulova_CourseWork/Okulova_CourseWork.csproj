@@ -47,8 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbHelper\DB.cs" />
-    <Compile Include="entities\Rent.cs" />
+    <Compile Include="entities\Аренда.cs" />
     <Compile Include="entities\Автор-Книга.cs" />
     <Compile Include="entities\Авторы.cs" />
     <Compile Include="entities\Книга.cs" />
@@ -66,6 +72,84 @@
     <Compile Include="Init.Designer.cs">
       <DependentUpon>Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff_AddAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_AddAuthor.Designer.cs">
+      <DependentUpon>Staff_AddAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_AddStaff.Designer.cs">
+      <DependentUpon>Staff_AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_AddUser.Designer.cs">
+      <DependentUpon>Staff_AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_ChangeAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_ChangeAuthor.Designer.cs">
+      <DependentUpon>Staff_ChangeAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_ChangeBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_ChangeBook.Designer.cs">
+      <DependentUpon>Staff_ChangeBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_ChangeStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_ChangeStaff.Designer.cs">
+      <DependentUpon>Staff_ChangeStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_ChangeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_ChangeUser.Designer.cs">
+      <DependentUpon>Staff_ChangeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_DeleteAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_DeleteAuthor.Designer.cs">
+      <DependentUpon>Staff_DeleteAuthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_DeleteBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_DeleteBook.Designer.cs">
+      <DependentUpon>Staff_DeleteBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_DeleteStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_DeleteStaff.Designer.cs">
+      <DependentUpon>Staff_DeleteStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_DeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_DeleteUser.Designer.cs">
+      <DependentUpon>Staff_DeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_In.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_In.Designer.cs">
+      <DependentUpon>Staff_In.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Staff_Out.Designer.cs">
+      <DependentUpon>Staff_Out.cs</DependentUpon>
+    </Compile>
     <Compile Include="Welcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +162,11 @@
     <Compile Include="MainStaff.Designer.cs">
       <DependentUpon>MainStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Staff_Add.cs">
+    <Compile Include="Staff_AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Staff_Add.Designer.cs">
-      <DependentUpon>Staff_Add.cs</DependentUpon>
+    <Compile Include="Staff_AddBook.Designer.cs">
+      <DependentUpon>Staff_AddBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,11 +176,53 @@
     <Compile Include="User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HelpUser.resx">
       <DependentUpon>HelpUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Init.resx">
       <DependentUpon>Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_AddAuthor.resx">
+      <DependentUpon>Staff_AddAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_AddStaff.resx">
+      <DependentUpon>Staff_AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_AddUser.resx">
+      <DependentUpon>Staff_AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_ChangeAuthor.resx">
+      <DependentUpon>Staff_ChangeAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_ChangeBook.resx">
+      <DependentUpon>Staff_ChangeBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_ChangeStaff.resx">
+      <DependentUpon>Staff_ChangeStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_ChangeUser.resx">
+      <DependentUpon>Staff_ChangeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_DeleteAuthor.resx">
+      <DependentUpon>Staff_DeleteAuthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_DeleteBook.resx">
+      <DependentUpon>Staff_DeleteBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_DeleteStaff.resx">
+      <DependentUpon>Staff_DeleteStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_DeleteUser.resx">
+      <DependentUpon>Staff_DeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_In.resx">
+      <DependentUpon>Staff_In.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Staff_Out.resx">
+      <DependentUpon>Staff_Out.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
@@ -104,8 +230,8 @@
     <EmbeddedResource Include="MainStaff.resx">
       <DependentUpon>MainStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Staff_Add.resx">
-      <DependentUpon>Staff_Add.cs</DependentUpon>
+    <EmbeddedResource Include="Staff_AddBook.resx">
+      <DependentUpon>Staff_AddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,6 +257,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSSCTLB">
+      <Guid>{9E175B60-F52A-11D8-B9A5-505054503030}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

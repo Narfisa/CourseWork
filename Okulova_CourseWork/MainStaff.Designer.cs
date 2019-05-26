@@ -48,7 +48,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.Outbutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.Searchbutton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Inbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,7 +80,7 @@
             this.panel2.Controls.Add(this.ShowBox);
             this.panel2.Location = new System.Drawing.Point(6, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(126, 160);
+            this.panel2.Size = new System.Drawing.Size(126, 141);
             this.panel2.TabIndex = 25;
             // 
             // Showbutton
@@ -89,12 +88,12 @@
             this.Showbutton.BackColor = System.Drawing.Color.Transparent;
             this.Showbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Showbutton.BackgroundImage")));
             this.Showbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Showbutton.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.Showbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Showbutton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Showbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Showbutton.Location = new System.Drawing.Point(2, 5);
+            this.Showbutton.Location = new System.Drawing.Point(32, 3);
             this.Showbutton.Name = "Showbutton";
-            this.Showbutton.Size = new System.Drawing.Size(120, 90);
+            this.Showbutton.Size = new System.Drawing.Size(65, 65);
             this.Showbutton.TabIndex = 27;
             this.Showbutton.UseVisualStyleBackColor = false;
             this.Showbutton.Click += new System.EventHandler(this.Showbutton_Click);
@@ -103,13 +102,13 @@
             // 
             this.ShowLabel.AutoSize = true;
             this.ShowLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ShowLabel.Font = new System.Drawing.Font("Lucida Bright", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowLabel.ForeColor = System.Drawing.Color.SkyBlue;
-            this.ShowLabel.Location = new System.Drawing.Point(2, 100);
+            this.ShowLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowLabel.ForeColor = System.Drawing.Color.Aqua;
+            this.ShowLabel.Location = new System.Drawing.Point(13, 70);
             this.ShowLabel.Name = "ShowLabel";
-            this.ShowLabel.Size = new System.Drawing.Size(120, 24);
+            this.ShowLabel.Size = new System.Drawing.Size(100, 25);
             this.ShowLabel.TabIndex = 26;
-            this.ShowLabel.Text = "Отобразить";
+            this.ShowLabel.Text = "Показать";
             // 
             // ShowBox
             // 
@@ -119,20 +118,21 @@
             "Книги",
             "Авторы",
             "Пользователи",
-            "Сотрудники"});
-            this.ShowBox.Location = new System.Drawing.Point(3, 136);
+            "Сотрудники",
+            "Аренда книг"});
+            this.ShowBox.Location = new System.Drawing.Point(18, 106);
             this.ShowBox.Name = "ShowBox";
-            this.ShowBox.Size = new System.Drawing.Size(120, 21);
+            this.ShowBox.Size = new System.Drawing.Size(91, 21);
             this.ShowBox.TabIndex = 1;
             // 
             // Searchlabel
             // 
             this.Searchlabel.AutoSize = true;
             this.Searchlabel.BackColor = System.Drawing.Color.Transparent;
-            this.Searchlabel.Font = new System.Drawing.Font("Lucida Fax", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchlabel.Location = new System.Drawing.Point(15, 181);
+            this.Searchlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Searchlabel.Location = new System.Drawing.Point(120, 178);
             this.Searchlabel.Name = "Searchlabel";
-            this.Searchlabel.Size = new System.Drawing.Size(63, 25);
+            this.Searchlabel.Size = new System.Drawing.Size(74, 26);
             this.Searchlabel.TabIndex = 21;
             this.Searchlabel.Text = "Поиск";
             // 
@@ -140,10 +140,11 @@
             // 
             this.Searchtextbox.BackColor = System.Drawing.Color.White;
             this.Searchtextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Searchtextbox.Location = new System.Drawing.Point(84, 183);
+            this.Searchtextbox.Location = new System.Drawing.Point(198, 180);
             this.Searchtextbox.Name = "Searchtextbox";
-            this.Searchtextbox.Size = new System.Drawing.Size(401, 23);
+            this.Searchtextbox.Size = new System.Drawing.Size(525, 23);
             this.Searchtextbox.TabIndex = 20;
+            this.Searchtextbox.TextChanged += new System.EventHandler(this.Searchtextbox_TextChanged);
             // 
             // DataGrid
             // 
@@ -163,7 +164,7 @@
             this.panel3.Controls.Add(this.AddBox);
             this.panel3.Location = new System.Drawing.Point(154, 7);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(126, 160);
+            this.panel3.Size = new System.Drawing.Size(126, 141);
             this.panel3.TabIndex = 27;
             // 
             // Addbutton
@@ -171,13 +172,13 @@
             this.Addbutton.BackColor = System.Drawing.Color.Transparent;
             this.Addbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Addbutton.BackgroundImage")));
             this.Addbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Addbutton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.Addbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Addbutton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Addbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Addbutton.ForeColor = System.Drawing.Color.Transparent;
-            this.Addbutton.Location = new System.Drawing.Point(3, 5);
+            this.Addbutton.Location = new System.Drawing.Point(32, 3);
             this.Addbutton.Name = "Addbutton";
-            this.Addbutton.Size = new System.Drawing.Size(120, 90);
+            this.Addbutton.Size = new System.Drawing.Size(65, 65);
             this.Addbutton.TabIndex = 28;
             this.Addbutton.UseVisualStyleBackColor = false;
             this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
@@ -186,11 +187,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Lucida Bright", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Green;
-            this.label4.Location = new System.Drawing.Point(14, 100);
+            this.label4.Location = new System.Drawing.Point(11, 70);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 24);
+            this.label4.Size = new System.Drawing.Size(104, 25);
             this.label4.TabIndex = 26;
             this.label4.Text = "Добавить";
             // 
@@ -203,9 +204,9 @@
             "Авторы",
             "Пользователи",
             "Сотрудники"});
-            this.AddBox.Location = new System.Drawing.Point(3, 136);
+            this.AddBox.Location = new System.Drawing.Point(18, 106);
             this.AddBox.Name = "AddBox";
-            this.AddBox.Size = new System.Drawing.Size(120, 21);
+            this.AddBox.Size = new System.Drawing.Size(91, 21);
             this.AddBox.TabIndex = 1;
             // 
             // panel4
@@ -216,7 +217,7 @@
             this.panel4.Controls.Add(this.DeleteBox);
             this.panel4.Location = new System.Drawing.Point(303, 7);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(126, 160);
+            this.panel4.Size = new System.Drawing.Size(126, 141);
             this.panel4.TabIndex = 28;
             // 
             // Deletebutton
@@ -224,12 +225,12 @@
             this.Deletebutton.BackColor = System.Drawing.Color.Transparent;
             this.Deletebutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Deletebutton.BackgroundImage")));
             this.Deletebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Deletebutton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.Deletebutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Deletebutton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Deletebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Deletebutton.Location = new System.Drawing.Point(3, 5);
+            this.Deletebutton.Location = new System.Drawing.Point(32, 3);
             this.Deletebutton.Name = "Deletebutton";
-            this.Deletebutton.Size = new System.Drawing.Size(120, 90);
+            this.Deletebutton.Size = new System.Drawing.Size(65, 65);
             this.Deletebutton.TabIndex = 29;
             this.Deletebutton.UseVisualStyleBackColor = false;
             this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
@@ -238,11 +239,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Lucida Bright", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkRed;
-            this.label5.Location = new System.Drawing.Point(20, 100);
+            this.label5.Location = new System.Drawing.Point(20, 70);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 24);
+            this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 26;
             this.label5.Text = "Удалить";
             // 
@@ -255,9 +256,9 @@
             "Авторы",
             "Пользователи",
             "Сотрудники"});
-            this.DeleteBox.Location = new System.Drawing.Point(3, 136);
+            this.DeleteBox.Location = new System.Drawing.Point(18, 106);
             this.DeleteBox.Name = "DeleteBox";
-            this.DeleteBox.Size = new System.Drawing.Size(120, 21);
+            this.DeleteBox.Size = new System.Drawing.Size(91, 21);
             this.DeleteBox.TabIndex = 1;
             // 
             // panel5
@@ -267,7 +268,7 @@
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(601, 7);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(126, 160);
+            this.panel5.Size = new System.Drawing.Size(126, 141);
             this.panel5.TabIndex = 29;
             // 
             // Outbutton
@@ -275,7 +276,7 @@
             this.Outbutton.BackColor = System.Drawing.Color.Transparent;
             this.Outbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Outbutton.BackgroundImage")));
             this.Outbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Outbutton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Outbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Outbutton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Outbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Outbutton.Location = new System.Drawing.Point(3, 5);
@@ -289,28 +290,13 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Lucida Bright", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.label6.Location = new System.Drawing.Point(1, 100);
+            this.label6.Location = new System.Drawing.Point(0, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 24);
+            this.label6.Size = new System.Drawing.Size(126, 25);
             this.label6.TabIndex = 26;
             this.label6.Text = "Выдача книг";
-            // 
-            // Searchbutton
-            // 
-            this.Searchbutton.BackColor = System.Drawing.Color.Transparent;
-            this.Searchbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Searchbutton.BackgroundImage")));
-            this.Searchbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Searchbutton.FlatAppearance.BorderSize = 0;
-            this.Searchbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
-            this.Searchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Searchbutton.Location = new System.Drawing.Point(491, 183);
-            this.Searchbutton.Name = "Searchbutton";
-            this.Searchbutton.Size = new System.Drawing.Size(26, 25);
-            this.Searchbutton.TabIndex = 30;
-            this.Searchbutton.UseVisualStyleBackColor = false;
-            this.Searchbutton.Click += new System.EventHandler(this.Searchbutton_Click);
             // 
             // panel6
             // 
@@ -319,7 +305,7 @@
             this.panel6.Controls.Add(this.label1);
             this.panel6.Location = new System.Drawing.Point(750, 7);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(126, 160);
+            this.panel6.Size = new System.Drawing.Size(126, 141);
             this.panel6.TabIndex = 30;
             // 
             // Inbutton
@@ -327,7 +313,7 @@
             this.Inbutton.BackColor = System.Drawing.Color.Transparent;
             this.Inbutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Inbutton.BackgroundImage")));
             this.Inbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Inbutton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Inbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Inbutton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Inbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Inbutton.Location = new System.Drawing.Point(3, 5);
@@ -341,11 +327,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Lucida Bright", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(5, 100);
+            this.label1.Location = new System.Drawing.Point(2, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 24);
+            this.label1.Size = new System.Drawing.Size(121, 25);
             this.label1.TabIndex = 26;
             this.label1.Text = "Приём книг";
             // 
@@ -357,7 +343,7 @@
             this.panel7.Controls.Add(this.Changelabel);
             this.panel7.Location = new System.Drawing.Point(452, 7);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(126, 160);
+            this.panel7.Size = new System.Drawing.Size(126, 141);
             this.panel7.TabIndex = 31;
             // 
             // Changecombobox
@@ -368,10 +354,11 @@
             "Книги",
             "Авторы",
             "Пользователи",
-            "Сотрудники"});
-            this.Changecombobox.Location = new System.Drawing.Point(3, 136);
+            "Сотрудники",
+            "Изменить пароль"});
+            this.Changecombobox.Location = new System.Drawing.Point(18, 106);
             this.Changecombobox.Name = "Changecombobox";
-            this.Changecombobox.Size = new System.Drawing.Size(120, 21);
+            this.Changecombobox.Size = new System.Drawing.Size(91, 21);
             this.Changecombobox.TabIndex = 30;
             // 
             // Changebutton
@@ -379,12 +366,12 @@
             this.Changebutton.BackColor = System.Drawing.Color.Transparent;
             this.Changebutton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Changebutton.BackgroundImage")));
             this.Changebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Changebutton.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.Changebutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.Changebutton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Changebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Changebutton.Location = new System.Drawing.Point(3, 5);
+            this.Changebutton.Location = new System.Drawing.Point(32, 3);
             this.Changebutton.Name = "Changebutton";
-            this.Changebutton.Size = new System.Drawing.Size(120, 90);
+            this.Changebutton.Size = new System.Drawing.Size(65, 65);
             this.Changebutton.TabIndex = 30;
             this.Changebutton.UseVisualStyleBackColor = false;
             this.Changebutton.Click += new System.EventHandler(this.Changebutton_Click);
@@ -393,11 +380,11 @@
             // 
             this.Changelabel.AutoSize = true;
             this.Changelabel.BackColor = System.Drawing.Color.Transparent;
-            this.Changelabel.Font = new System.Drawing.Font("Lucida Bright", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Changelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Changelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Changelabel.Location = new System.Drawing.Point(7, 100);
+            this.Changelabel.Location = new System.Drawing.Point(3, 70);
             this.Changelabel.Name = "Changelabel";
-            this.Changelabel.Size = new System.Drawing.Size(112, 24);
+            this.Changelabel.Size = new System.Drawing.Size(120, 25);
             this.Changelabel.TabIndex = 26;
             this.Changelabel.Text = "Изменение";
             // 
@@ -409,7 +396,6 @@
             this.ClientSize = new System.Drawing.Size(884, 681);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.Searchbutton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -459,7 +445,6 @@
         private System.Windows.Forms.ComboBox DeleteBox;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Searchbutton;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Showbutton;

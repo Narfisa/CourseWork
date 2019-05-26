@@ -89,7 +89,7 @@
             this.Viewlabel.AutoSize = true;
             this.Viewlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Viewlabel.ForeColor = System.Drawing.Color.Black;
-            this.Viewlabel.Location = new System.Drawing.Point(12, 392);
+            this.Viewlabel.Location = new System.Drawing.Point(12, 390);
             this.Viewlabel.Name = "Viewlabel";
             this.Viewlabel.Size = new System.Drawing.Size(542, 60);
             this.Viewlabel.TabIndex = 4;

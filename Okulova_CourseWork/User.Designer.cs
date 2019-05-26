@@ -31,14 +31,12 @@
             this.Searchlabel = new System.Windows.Forms.Label();
             this.Searchtextbox = new System.Windows.Forms.TextBox();
             this.DataGrid = new System.Windows.Forms.DataGridView();
-            this.Inlabel = new System.Windows.Forms.Label();
-            this.IncomboBox = new System.Windows.Forms.ComboBox();
             this.Tablelabel = new System.Windows.Forms.Label();
             this.TablecomboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.OKbutton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IDtextBox = new System.Windows.Forms.TextBox();
             this.IDlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -50,7 +48,7 @@
             this.Searchlabel.AutoSize = true;
             this.Searchlabel.BackColor = System.Drawing.Color.Transparent;
             this.Searchlabel.Font = new System.Drawing.Font("Lucida Fax", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Searchlabel.Location = new System.Drawing.Point(90, 18);
+            this.Searchlabel.Location = new System.Drawing.Point(90, 44);
             this.Searchlabel.Name = "Searchlabel";
             this.Searchlabel.Size = new System.Drawing.Size(63, 25);
             this.Searchlabel.TabIndex = 33;
@@ -60,7 +58,7 @@
             // 
             this.Searchtextbox.BackColor = System.Drawing.Color.White;
             this.Searchtextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Searchtextbox.Location = new System.Drawing.Point(19, 46);
+            this.Searchtextbox.Location = new System.Drawing.Point(19, 72);
             this.Searchtextbox.Name = "Searchtextbox";
             this.Searchtextbox.Size = new System.Drawing.Size(210, 23);
             this.Searchtextbox.TabIndex = 32;
@@ -76,32 +74,12 @@
             this.DataGrid.Size = new System.Drawing.Size(606, 498);
             this.DataGrid.TabIndex = 31;
             // 
-            // Inlabel
-            // 
-            this.Inlabel.AutoSize = true;
-            this.Inlabel.BackColor = System.Drawing.Color.Transparent;
-            this.Inlabel.Font = new System.Drawing.Font("Lucida Fax", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inlabel.Location = new System.Drawing.Point(104, 97);
-            this.Inlabel.Name = "Inlabel";
-            this.Inlabel.Size = new System.Drawing.Size(31, 25);
-            this.Inlabel.TabIndex = 35;
-            this.Inlabel.Text = "В:";
-            // 
-            // IncomboBox
-            // 
-            this.IncomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.IncomboBox.FormattingEnabled = true;
-            this.IncomboBox.Location = new System.Drawing.Point(51, 125);
-            this.IncomboBox.Name = "IncomboBox";
-            this.IncomboBox.Size = new System.Drawing.Size(134, 21);
-            this.IncomboBox.TabIndex = 36;
-            // 
             // Tablelabel
             // 
             this.Tablelabel.AutoSize = true;
             this.Tablelabel.BackColor = System.Drawing.Color.Transparent;
             this.Tablelabel.Font = new System.Drawing.Font("Lucida Fax", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tablelabel.Location = new System.Drawing.Point(72, 182);
+            this.Tablelabel.Location = new System.Drawing.Point(76, 163);
             this.Tablelabel.Name = "Tablelabel";
             this.Tablelabel.Size = new System.Drawing.Size(91, 25);
             this.Tablelabel.TabIndex = 37;
@@ -114,7 +92,7 @@
             this.TablecomboBox.Items.AddRange(new object[] {
             "Книги",
             "Авторы"});
-            this.TablecomboBox.Location = new System.Drawing.Point(51, 233);
+            this.TablecomboBox.Location = new System.Drawing.Point(55, 214);
             this.TablecomboBox.Name = "TablecomboBox";
             this.TablecomboBox.Size = new System.Drawing.Size(133, 21);
             this.TablecomboBox.TabIndex = 38;
@@ -126,8 +104,6 @@
             this.panel1.Controls.Add(this.Searchlabel);
             this.panel1.Controls.Add(this.Tablelabel);
             this.panel1.Controls.Add(this.Searchtextbox);
-            this.panel1.Controls.Add(this.IncomboBox);
-            this.panel1.Controls.Add(this.Inlabel);
             this.panel1.Location = new System.Drawing.Point(624, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(248, 269);
@@ -136,7 +112,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.OKbutton);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.IDtextBox);
             this.panel2.Controls.Add(this.IDlabel);
             this.panel2.Location = new System.Drawing.Point(624, 319);
             this.panel2.Name = "panel2";
@@ -155,13 +131,14 @@
             this.OKbutton.TabIndex = 41;
             this.OKbutton.Text = "ОК";
             this.OKbutton.UseVisualStyleBackColor = false;
+            this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
-            // textBox1
+            // IDtextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 40;
+            this.IDtextBox.Location = new System.Drawing.Point(51, 105);
+            this.IDtextBox.Name = "IDtextBox";
+            this.IDtextBox.Size = new System.Drawing.Size(151, 20);
+            this.IDtextBox.TabIndex = 40;
             // 
             // IDlabel
             // 
@@ -206,14 +183,12 @@
         private System.Windows.Forms.Label Searchlabel;
         private System.Windows.Forms.TextBox Searchtextbox;
         private System.Windows.Forms.DataGridView DataGrid;
-        private System.Windows.Forms.Label Inlabel;
-        private System.Windows.Forms.ComboBox IncomboBox;
         private System.Windows.Forms.Label Tablelabel;
         private System.Windows.Forms.ComboBox TablecomboBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button OKbutton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox IDtextBox;
         private System.Windows.Forms.Label IDlabel;
     }
 }
