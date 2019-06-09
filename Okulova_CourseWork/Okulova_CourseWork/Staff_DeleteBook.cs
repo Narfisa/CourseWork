@@ -69,5 +69,11 @@ namespace Okulova_CourseWork
                 }
             }            
         }
+
+        private void Searchtextbox_TextChanged(object sender, EventArgs e)
+        {
+            string s = Searchtextbox.Text;
+            dataGrid.DataSource = db.Search(0, s);
+        }
     }
 }

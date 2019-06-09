@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using System.Linq;
 using Okulova_CourseWork.entities;
+using static Okulova_CourseWork.StringCheck;
 
 namespace Okulova_CourseWork
 {
@@ -22,43 +23,6 @@ namespace Okulova_CourseWork
                                          select c.LastName + " " + c.FirstName;
             Author3combobox.SelectedIndex = -1;
         }
-
-        public int Check(string s, bool key)
-        {
-            if (s == "")
-                return -1;
-            char[] str = s.ToCharArray();
-            int i;
-            if (!key)
-            {
-                for (i = 0; i < str.Length; ++i)
-                {
-                    if (char.IsNumber(str[i]))
-                        return 1;
-                    if (!char.IsLetter(str[i]) && str[i] != '-' && !char.IsWhiteSpace(str[i]))
-                        return 2;
-                    if (i > 0 && char.IsWhiteSpace(str[i - 1]) && char.IsWhiteSpace(str[i]))
-                        return 3;
-                    if (char.IsWhiteSpace(str[0]))
-                        return 4;
-                }
-                return 0;
-            }
-            else
-            {
-                for (i = 0; i < str.Length; ++i)
-                {
-                    if (char.IsLetter(str[i]))
-                        return 1;
-                    if (i > 0 && char.IsWhiteSpace(str[i - 1]) && char.IsWhiteSpace(str[i]))
-                        return 2;
-                    if (char.IsWhiteSpace(str[i]))
-                        return 3;
-                }
-                return 0;
-            }
-        }
-
 
         public void Clear()
         {
@@ -107,38 +71,40 @@ namespace Okulova_CourseWork
                 }
                 else
                 {
-                    Books book1 = new Books
+                    try
                     {
-                        Title = Titletextbox.Text,
-                        Genre = Genretextbox.Text,
-                        Release = Convert.ToInt32(Issuetextbox.Text),
-                        Count = Convert.ToInt32(Counttextbox.Text),
-                    };
-                    db.Addbook(book1);
-                    if (Author1combobox.SelectedIndex != -1)
-                    {                       
-                        int idBook = (from c in db.GetBooksTable()
-                                     where c.Title == Titletextbox.Text
-                                     select c.Id).First();
-                        db.AddAuthor_Book(idBook, Author1combobox.SelectedIndex + 1);
+                        db.Addbook(Titletextbox.Text, Genretextbox.Text, Convert.ToInt32(Issuetextbox.Text), Convert.ToInt32(Counttextbox.Text));
+                        if (Author1combobox.SelectedIndex != -1)
+                        {
+                            int idBook = (from c in db.GetBooksTable()
+                                          where c.Title == Titletextbox.Text
+                                          select c.Id).First();
+                            db.AddAuthor_Book(idBook, Author1combobox.SelectedIndex + 1);
+                        }
+                        if (Author2combobox.SelectedIndex != -1)
+                        {
+                            int idBook = (from c in db.GetBooksTable()
+                                          where c.Title == Titletextbox.Text
+                                          select c.Id).First();
+                            db.AddAuthor_Book(idBook, Author2combobox.SelectedIndex + 1);
+                        }
+                        if (Author3combobox.SelectedIndex != -1)
+                        {
+                            int idBook = (from c in db.GetBooksTable()
+                                          where c.Title == Titletextbox.Text
+                                          select c.Id).First();
+                            db.AddAuthor_Book(idBook, Author3combobox.SelectedIndex + 1);
+                        }
+                        MessageBox.Show("Новая запись добавлена.", "Добавлено.", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        Clear();
                     }
-                    if (Author2combobox.SelectedIndex != -1)
+                    catch
                     {
-                        int idBook = (from c in db.GetBooksTable()
-                                      where c.Title == Titletextbox.Text
-                                      select c.Id).First();
-                        db.AddAuthor_Book(idBook, Author2combobox.SelectedIndex + 1);
+                        MessageBox.Show("Произошла ошибка при добавлении.\n Возможно, эта запись уже существуют, либо введены неккоректные данные.",
+                        "Невозможно добавить запись", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    if (Author3combobox.SelectedIndex != -1)
-                    {
-                        int idBook = (from c in db.GetBooksTable()
-                                      where c.Title == Titletextbox.Text
-                                      select c.Id).First();
-                        db.AddAuthor_Book(idBook, Author3combobox.SelectedIndex + 1);
-                    }
-                    MessageBox.Show("Новая запись добавлена.", "Добавлено.", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    Clear();
+                    
                 }                    
             }
 

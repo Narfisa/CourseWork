@@ -254,8 +254,8 @@ namespace Okulova_CourseWork
             int? count = TotalCount - Current_Count;
             if (Convert.ToInt32(Counttextbox.Text) + count > TotalCount)
             {
-                MessageBox.Show("Введенное вами значение количества (" + Counttextbox.Text +  ") и текущее количество книг (" +
-                    Convert.ToString(Current_Count) + ") больше общего количества книг (" + Convert.ToString(TotalCount) + 
+                MessageBox.Show("Введенное вами значение количества (" + Counttextbox.Text + ") и текущее количество книг (" +
+                    Convert.ToString(Current_Count) + ") больше общего количества книг (" + Convert.ToString(TotalCount) +
                     "\nИзмените количество книг в \"Изменение\", либо введите другое количество.",
                     "Невозможно принять такое количество книг.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

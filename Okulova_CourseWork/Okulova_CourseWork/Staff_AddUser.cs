@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Linq;
+using static Okulova_CourseWork.StringCheck;
 
 namespace Okulova_CourseWork
 {
@@ -11,42 +12,6 @@ namespace Okulova_CourseWork
         public Staff_AddUser()
         {
             InitializeComponent();
-        }
-
-        public int Check(string s, bool key)
-        {
-            if (s == "")
-                return -1;
-            char[] str = s.ToCharArray();
-            int i;
-            if (!key)
-            {
-                for (i = 0; i < str.Length; ++i)
-                {
-                    if (char.IsNumber(str[i]))
-                        return 1;
-                    if (!char.IsLetter(str[i]) && str[i] != '-' && !char.IsWhiteSpace(str[i]))
-                        return 2;
-                    if (i > 0 && char.IsWhiteSpace(str[i - 1]) && char.IsWhiteSpace(str[i]))
-                        return 3;
-                    if (char.IsWhiteSpace(str[i]))
-                        return 4;
-                }
-                return 0;
-            }
-            else
-            {
-                for (i = 0; i < str.Length; ++i)
-                {
-                    if (char.IsLetter(str[i]))
-                        return 1;
-                    if (i > 0 && char.IsWhiteSpace(str[i - 1]) && char.IsWhiteSpace(str[i]))
-                        return 2;
-                    if (char.IsWhiteSpace(str[i]))
-                        return 3;
-                }
-                return 0;
-            }
         }
 
         private void Cancelbutton_Click(object sender, EventArgs e)
@@ -76,8 +41,16 @@ namespace Okulova_CourseWork
             if (FirstNametextbox.Text != "" && LastNametextbox.Text != "" && Phonetextbox.Text != ""
                 && Adresstextbox.Text != "")
             {
-                db.AddUser(FirstNametextbox.Text, LastNametextbox.Text, Phonetextbox.Text,
-                    Adresstextbox.Text, BirthdayPicker.Value);
+                try
+                {
+                    db.AddUser(FirstNametextbox.Text, LastNametextbox.Text, Phonetextbox.Text,
+                        Adresstextbox.Text, BirthdayPicker.Value);
+                }
+                catch
+                {
+                    MessageBox.Show("Произошла ошибка при добавлении.\n Возможно, эта запись уже существуют, либо введены неккоректные данные.",
+                        "Невозможно добавить запись", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
                 MessageBox.Show("Пожалуйста, заполните все поля.",

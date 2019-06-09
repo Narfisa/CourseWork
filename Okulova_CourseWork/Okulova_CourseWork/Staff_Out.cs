@@ -228,8 +228,16 @@ namespace Okulova_CourseWork
             }
             else
             {
-                db.AddRent(IdStaff, Convert.ToInt32(IDUsertextbox.Text), Convert.ToInt32(IDBooktextbox.Text),
+                try
+                {
+                    db.AddRent(IdStaff, Convert.ToInt32(IDUsertextbox.Text), Convert.ToInt32(IDBooktextbox.Text),
                     DateTime.Today, DateTime.Today.AddMonths(3), Convert.ToInt32(Counttextbox.Text));
+                }
+                catch
+                {
+                    MessageBox.Show("Произошла ошибка при добавлении записи о выдаче книги.\n Возможно, эта запись уже существуют.",
+                        "Невозможно добавить запись", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 MessageBox.Show("Новая запись добавлена.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

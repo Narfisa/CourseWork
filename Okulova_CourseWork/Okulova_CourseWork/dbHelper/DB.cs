@@ -2,7 +2,6 @@
 using System.Data.Linq;
 using System.Linq;
 using System;
-using System.Windows.Forms;
 
 namespace Okulova_CourseWork.dbHelper
 {
@@ -11,7 +10,6 @@ namespace Okulova_CourseWork.dbHelper
         private static readonly string _connectionString =
            @"Data Source=.\SQLEXPRESS;Initial Catalog=OKULOVA_KURSACH;Integrated Security=True";
         private readonly DataContext Dc = new DataContext(_connectionString);
-
 
         public Table<Authors> GetAuthorsTable()
         {
@@ -48,13 +46,8 @@ namespace Okulova_CourseWork.dbHelper
                 on Author_Book.IdAuthors equals Author.Id
                 select new
                 {
-                    c.Id,
-                    c.Title,
-                    c.Genre,
-                    c.Release,
-                    c.Count,
-                    Author.FirstName,
-                    Author.LastName,
+                    IDКНИГИ = c.Id, c.Title, c.Genre,
+                    c.Release, c.Count, Author.FirstName, Author.LastName,
                     Current_Count = c.Count - ((from rent in GetRentTable()                                               
                                                where c.Id == rent.IdBooks
                                                select rent.Count).Sum() ?? 0)
@@ -73,14 +66,10 @@ namespace Okulova_CourseWork.dbHelper
                 on rent.IdUsers equals user.Id
                 select new
                 {
-                    IdBook = book.Id,
-                    book.Title,
-                    IdUser = user.Id,
-                    UserName = user.LastName + " " + user.FirstName,
-                    IDStaff = staff.Id,
-                    StaffName = staff.LastName + " " + staff.FirstName,
-                    RentCount = rent.Count,
-                    IssueDate = rent.Issue,
+                    IdBook = book.Id, book.Title,
+                    IdUser = user.Id,  UserName = user.LastName + " " + user.FirstName,
+                    IDStaff = staff.Id, StaffName = staff.LastName + " " + staff.FirstName,
+                    RentCount = rent.Count, IssueDate = rent.Issue,
                 };
         }
 
@@ -108,8 +97,8 @@ namespace Okulova_CourseWork.dbHelper
         public int GetIdStaff(string Passport, string Password)
         {
            var query = from c in GetStaffTable()
-                    where c.Password == Password && c.Passport == Passport
-                    select c.Id;
+                       where c.Password == Password && c.Passport == Passport
+                       select c.Id;
             return query.FirstOrDefault();
         }
 
@@ -167,20 +156,23 @@ namespace Okulova_CourseWork.dbHelper
                         || Convert.ToString(rent.Count).StartsWith(s) || Convert.ToString(rent.Issue).StartsWith(s)
                         select new
                         {
-                            IdBook = book.Id,
-                            book.Title,
-                            IdUser = user.Id,
+                            IdBook = book.Id, book.Title, IdUser = user.Id,
                             UserName = user.LastName + " " + user.FirstName,
-                            IDStaff = staff.Id,
-                            StaffName = staff.LastName + " " + staff.FirstName,
-                            RentCount = rent.Count,
-                            IssueDate = rent.Issue,
+                            IDStaff = staff.Id, StaffName = staff.LastName + " " + staff.FirstName,
+                            RentCount = rent.Count, IssueDate = rent.Issue,
                         };
             }
         }
 
-        public void Addbook(Books book1)
+        public void Addbook(string Title, string Genre, int? Release, int Count)
         {
+            Books book1 = new Books
+            {
+                Title = Title,
+                Genre = Genre,
+                Release = Release,
+                Count = Count,
+            };
             GetBooksTable().InsertOnSubmit(book1);
             Dc.SubmitChanges();
         }

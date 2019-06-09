@@ -43,8 +43,18 @@ namespace Okulova_CourseWork
         private void Addbutton_Click(object sender, EventArgs e)
         {
             if (FirstNametextbox.Text != "")
-                db.AddAuthor(LastNametextbox.Text, FirstNametextbox.Text, Patronymictextbox.Text,
+            {
+                try
+                {
+                    db.AddAuthor(LastNametextbox.Text, FirstNametextbox.Text, Patronymictextbox.Text,
                     Countrytextbox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Произошла ошибка при добавлении.\n Возможно, эта запись уже существуют, либо введены неккоректные данные.",
+                        "Невозможно добавить запись", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             else
                 MessageBox.Show("Пожалуйста, заполните, как минимум, поле *Имя*.",
                     "Заполните все поля.", MessageBoxButtons.OK,

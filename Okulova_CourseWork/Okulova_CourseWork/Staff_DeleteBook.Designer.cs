@@ -110,6 +110,7 @@
             this.Searchtextbox.Name = "Searchtextbox";
             this.Searchtextbox.Size = new System.Drawing.Size(389, 23);
             this.Searchtextbox.TabIndex = 34;
+            this.Searchtextbox.TextChanged += new System.EventHandler(this.Searchtextbox_TextChanged);
             // 
             // Staff_DeleteBook
             // 
